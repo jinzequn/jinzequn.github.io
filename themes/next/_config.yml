@@ -253,10 +253,10 @@ sidebar:
   offset: 12
 
   # Back to top in sidebar (only for Pisces | Gemini).
-  b2t: false
+  b2t: true
 
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: ture
 
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
@@ -551,8 +551,8 @@ gitment:
   language: # Force language, or auto switch by theme
   github_user: jinzequn # MUST HAVE, Your Github Username
   github_repo: jinzequn.github.io # MUST HAVE, The name of the repo you use to store Gitment comments
-  client_id: 63535c4e44237dea561a # MUST HAVE, Github client id for the Gitment
-  client_secret: ff8ec1298d72ee7770ba6fa805d2825fdbd4f2f0 # EITHER this or proxy_gateway, Github access secret token for the Gitment
+  client_id: e05436efd1d0e9397c73 # MUST HAVE, Github client id for the Gitment
+  client_secret: 54d5c1a7fa874aacdd0d8dd8996f5567cccf6517 # EITHER this or proxy_gateway, Github access secret token for the Gitment
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
 
