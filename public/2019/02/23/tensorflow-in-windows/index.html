@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Zorion&#39;s Blog">
 <meta property="og:description" content="在win10下用vs2015编译TensorFlow源码并进行测试.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-23T08:04:02.174Z">
+<meta property="og:updated_time" content="2019-02-23T08:10:25.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Win10下编译TensorFlow源码">
 <meta name="twitter:description" content="在win10下用vs2015编译TensorFlow源码并进行测试.">
@@ -406,7 +406,7 @@
                 
               
 
-              <time title="创建时间：2019-02-23 20:00:00 / 修改时间：16:04:02" itemprop="dateCreated datePublished" datetime="2019-02-23T20:00:00+08:00">2019-02-23</time>
+              <time title="创建时间：2019-02-23 20:00:00 / 修改时间：16:10:25" itemprop="dateCreated datePublished" datetime="2019-02-23T20:00:00+08:00">2019-02-23</time>
             
 
             
@@ -471,8 +471,7 @@
       
         <p>在win10下用vs2015编译TensorFlow源码并进行测试.<br><a id="more"></a></p>
 <p>由于一些项目需要在windows下调用tensorflow模型,进行预测,所以接到在windows下运行模型的需求后,着手把目前在linux下的工程运行在windows下.然而在windows下编译TensorFlow是一个非常非常坑的事情,用了一个周末才编译出tensorflow.lib和tensorflow.dll这两个大宝贝,写下来记录一下.</p>
-<p>##前期准备</p>
-<ol>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ol>
 <li>Swig-3.0.12</li>
 <li>Cmake</li>
 <li>tensorflow源码 (r1.10.0)</li>
@@ -480,8 +479,7 @@
 <li>Git</li>
 <li>Shadowsocks(最好可以科学上网，因为有一些库要下)</li>
 </ol>
-<p>##编译步骤</p>
-<ol>
+<h2 id="编译步骤"><a href="#编译步骤" class="headerlink" title="编译步骤"></a>编译步骤</h2><ol>
 <li>git config –global http.proxy ‘socks5://127.0.0.1:1080’ （开启科学上网光速通道，首先要有shadowsocks哈）</li>
 <li>git clone -b v1.10.0 <a href="https://github.com/tensorflow/tensorflow.git" target="_blank" rel="noopener">https://github.com/tensorflow/tensorflow.git</a></li>
 <li>用cmake-gui进行预编译，cmake平台选择要选x64</li>
@@ -489,20 +487,21 @@
 <li>在SWIG_EXECUTABLE选项中输入swig.exe的绝对路径，其他选择看需求</li>
 <li>用vs2015打开ALL_BUILD.vcxproj,  编译平台选择release,x64，编译ALL_BUILD<br>最好用内存超过20G的机器进行编译，否则可能会出现错误。编译成功会在Release目录下生成很多的库，其中包括tensorflow.lib和tensorflow.dll</li>
 </ol>
-<p>##测试</p>
-<p>测试项目为tensorflow给出的<strong>Image Recognition Demo</strong>，使用inception网络进行图片分类的demo，调用C++接口加载inception_v3_2016_08_28_froczen.pb模型，进行图片的分类</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试项目为tensorflow给出的<strong>Image Recognition Demo</strong>，使用inception网络进行图片分类的demo，调用C++接口加载inception_v3_2016_08_28_froczen.pb模型，进行图片的分类.</p>
 <ol>
 <li>下载模型文件<br>（<a href="https://storage.googleapis.com/download.tensorflow.org/models/inception_v3_2016_08_28_frozen.pb.tar.gz" target="_blank" rel="noopener">https://storage.googleapis.com/download.tensorflow.org/models/inception_v3_2016_08_28_frozen.pb.tar.gz</a> ）</li>
 <li>源码位于tensorflow\tensorflow\examples\label_image 下，新建vs2015工程，将main.cpp拷贝到工程目录下</li>
 <li><p>编写项目头文件，用于防止命名空间冲突，代码如下</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">	<span class="meta">#<span class="meta-keyword">define</span> COMPILER_MSVC</span></span><br><span class="line">	<span class="meta">#<span class="meta-keyword">define</span> NOMINMAX  </span></span><br><span class="line">```	</span><br><span class="line"><span class="number">4.</span> 右击项目→属性→配置属性→C/C++→常规→附加包含目录，输入如下所示的路径。</span><br></pre></td></tr></table></figure>
-<p> E:\workspace\tensorflow\tensorflow<br> E:\workspace\tensorflow\tensorflow\tensorflow\contrib\cmake\build<br> E:\workspace\tensorflow\tensorflow\tensorflow\contrib\cmake\build\eigen\src\eigen<br> E:\workspace\tensorflow\tensorflow\tensorflow\contrib\cmake\build\nsync\src\nsync\public<br> E:\workspace\tensorflow\tensorflow\tensorflow\contrib\cmake\build\protobuf\src\protobuf\src<br> %(AdditionalIncludeDirectories)<br><code>`</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> COMPILER_MSVC</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NOMINMAX</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>右击项目，添加现有项，选择tensorflow\contrib\cmake\build\Release中的tensorflow.lib</li>
+<li><p>右击项目→属性→配置属性→C/C++→常规→附加包含目录，输入如下所示的路径。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">E:\workspace\tensorflow\tensorflow</span><br><span class="line">E:\workspace\tensorflow\tensorflow\tensorflow\contrib\cmake\build</span><br><span class="line">E:\workspace\tensorflow\tensorflow\tensorflow\contrib\cmake\build\eigen\src\eigen</span><br><span class="line">E:\workspace\tensorflow\tensorflow\tensorflow\contrib\cmake\build\nsync\src\nsync\<span class="keyword">public</span></span><br><span class="line">E:\workspace\tensorflow\tensorflow\tensorflow\contrib\cmake\build\protobuf\src\protobuf\src</span><br><span class="line">%(AdditionalIncludeDirectories)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>右击项目，添加现有项，选择tensorflow\contrib\cmake\build\Release中的tensorflow.lib</p>
+</li>
 <li>Ctrl+F5 进行编译，注意其中测试图片和模型的路径问题需要按需调整，vs2015调试中过程中相对路径的根目录位于项目工程文件夹根目录中同名文件夹下，例如你的项目名为test，项目工程中会有一个名为test的文件夹。</li>
 </ol>
-<p>##最后</p>
-<p>编译的时候一定要有耐心, 并且c++的代码还是比较难看的,祝好运!</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>编译的时候一定要有耐心,真爱生命,远离巨硬.</p>
 
       
     </div>
@@ -621,8 +620,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -742,6 +750,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前期准备"><span class="nav-number">1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译步骤"><span class="nav-number">2.</span> <span class="nav-text">编译步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">3.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">4.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
