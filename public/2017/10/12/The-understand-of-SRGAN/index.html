@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -121,7 +121,7 @@
 <meta property="og:image" content="http://yoursite.com/2017/10/12/The-understand-of-SRGAN/5.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/10/12/The-understand-of-SRGAN/6.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/10/12/The-understand-of-SRGAN/3.jpg">
-<meta property="og:updated_time" content="2018-11-24T11:43:26.214Z">
+<meta property="og:updated_time" content="2020-02-03T02:25:08.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【读论文】SRGAN">
 <meta name="twitter:description" content="这篇论文第一次将GAN（生成式对抗网络）引入图像超分辨率，取得state-of-art的效果，论文的效果值得称赞！">
@@ -238,7 +238,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-home&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;首页</a>
 
   </li>
         
@@ -255,7 +255,7 @@
 
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-tags&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;标签</a>
 
   </li>
         
@@ -272,7 +272,7 @@
 
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-th&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;分类</a>
 
   </li>
         
@@ -289,7 +289,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-archive&quot;&gt;&lt;&#x2F;i&gt; &lt;br &#x2F;&gt;归档</a>
 
   </li>
 
@@ -429,7 +429,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-24 19:43:26" itemprop="dateModified" datetime="2018-11-24T19:43:26+08:00">2018-11-24</time>
+                <time title="修改时间：2020-02-03 10:25:08" itemprop="dateModified" datetime="2020-02-03T10:25:08+08:00">2020-02-03</time>
               
             
           </span>
@@ -489,6 +489,7 @@
       
         <p>这篇论文第一次将GAN（生成式对抗网络）引入图像超分辨率，取得state-of-art的效果，论文的效果值得称赞！</p>
 <a id="more"></a>
+
 <p>论文是2016.09.15发布在arXiv上，作者栏上Twitter很是显眼，低头看了一眼还在显示娱乐八卦的微博，反手就是一巴掌…</p>
 <h3 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h3><p>这篇论文摘要中说，最近的图像超分辨率的工作大都集中于以均方差（MSE）作为损失函数，这样会造成生成图像过于平滑，缺少高频细节，看起来很不爽，所以提出了基于生成式对抗网络的网络结构，据我们所知这是生成式对抗网络第一次应用于4倍下采样图像的超分辨重建（无形装逼，最为致命）。本文提出了一个由adversarial loss和content loss组成的损失函数，损失函数作为GAN的判别器损失函数来对生成图像进行判别。多说一句，我们的损失函数是基于感知相似性而不是像素空间的相似性（不要用信噪比（PSNR）那种东西来衡量我的论文），所以我们的生成图像的质量非常好。</p>
 <h3 id="主要贡献"><a href="#主要贡献" class="headerlink" title="主要贡献"></a>主要贡献</h3><p>论文刚开始不出所料的对各路大神在超分辨率的工作进行无情嘲讽，就按下不表了，主要说说贡献。这边文章最大的贡献是将生成式对抗网络应用于图像超分辨率，让判别器分辨生成的图像和真实的图像，这样就能达到photo-realistic的效果，这个想法不错，然后设计了一个新的损失函数进行判别我们接下来会详细的说明一下。</p>
@@ -663,7 +664,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -736,7 +737,7 @@
                   
                     
                   
-                  <a href="https://github.com/jinzequn" title="GitHub &rarr; https://github.com/jinzequn" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  <a href="https://github.com/jinzequn" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;jinzequn" rel="noopener" target="_blank">&lt;i class&#x3D;&quot;fa fa-fw fa-github&quot;&gt;&lt;&#x2F;i&gt;GitHub</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -747,7 +748,7 @@
                   
                     
                   
-                  <a href="mailto:ginnzorion@gmail.com" title="E-Mail &rarr; mailto:ginnzorion@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  <a href="mailto:ginnzorion@gmail.com" title="E-Mail &amp;rarr; mailto:ginnzorion@gmail.com" rel="noopener" target="_blank">&lt;i class&#x3D;&quot;fa fa-fw fa-envelope&quot;&gt;&lt;&#x2F;i&gt;E-Mail</a>
                 </span>
               
             </div>
@@ -803,7 +804,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -815,7 +816,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
 
 
 
@@ -823,7 +824,7 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.5.0</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.5.0</div>
 
 
 
