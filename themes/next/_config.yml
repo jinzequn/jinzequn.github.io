@@ -147,7 +147,7 @@ menu:
 
 # Enable/Disable menu icons / item badges.
 menu_settings:
-  icons: true
+  icons: false
   badges: false
 
 # ---------------------------------------------------------------
@@ -187,7 +187,7 @@ social:
   #Skype: skype:yourname?call|chat || skype
 
 social_icons:
-  enable: true
+  enable: false
   icons_only: false
   transition: false
 
