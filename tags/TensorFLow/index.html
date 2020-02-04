@@ -111,7 +111,7 @@
   <meta name="description" content="The world is a paradox">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Zorion&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/TensorFlow/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/TensorFLow/index.html">
 <meta property="og:site_name" content="Zorion&#39;s Blog">
 <meta property="og:description" content="The world is a paradox">
 <meta property="og:locale" content="zh-CN">
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/TensorFlow/">
+  <link rel="canonical" href="http://yoursite.com/tags/TensorFLow/">
 
 
 
@@ -134,7 +134,7 @@
   };
 </script>
 
-  <title>标签: TensorFlow | Zorion's Blog</title>
+  <title>标签: TensorFLow | Zorion's Blog</title>
   
 
 
@@ -363,7 +363,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>TensorFlow<small>标签</small>
+        <h1>TensorFLow<small>标签</small>
         </h1>
       </div>
 
@@ -375,17 +375,17 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/01/28/deconv-and-unpool/" itemprop="url">
+            <a class="post-title-link" href="/2019/02/23/tensorflow-in-windows/" itemprop="url">
               
-                <span itemprop="name">谈谈Deconv和Unpooling</span>
+                <span itemprop="name">Win10下编译TensorFlow源码</span>
               
             </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-01-28T20:00:00+08:00" content="2018-01-28">
-          01-28
+        <time class="post-time" itemprop="dateCreated" datetime="2019-02-23T20:00:00+08:00" content="2019-02-23">
+          02-23
         </time>
       </div>
 
@@ -401,43 +401,17 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/05/tensorflow-distribute/" itemprop="url">
+            <a class="post-title-link" href="/2017/12/01/tensorflow-mulit-gpus/" itemprop="url">
               
-                <span itemprop="name">TensorFlow分布式部署【多机多卡】</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-12-05T12:00:00+08:00" content="2017-12-05">
-          12-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-categories" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/18/从源码编译TensorFlow/" itemprop="url">
-              
-                <span itemprop="name">从源码编译TensorFlow</span>
+                <span itemprop="name">TensorFlow分布式部署【单机多卡】</span>
               
             </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-04-18T12:44:21+08:00" content="2017-04-18">
-          04-18
+        <time class="post-time" itemprop="dateCreated" datetime="2017-12-01T20:00:00+08:00" content="2017-12-01">
+          12-01
         </time>
       </div>
 
@@ -1088,6 +1062,59 @@
     });
     $(document).on('keyup', function (event) {
       var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
         $('.search-popup').is(':visible');
       if (shouldDismissSearchPopup) {
         onPopupClose();
